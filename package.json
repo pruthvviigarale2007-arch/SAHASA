@@ -1,11 +1,13 @@
 {
-  "name": "wanderly-root",
+  "name": "sahasa-root",
   "version": "1.0.0",
-  "description": "Wanderly Travel Platform - Root Monorepo",
+  "description": "SAHASA Travel Platform - Monorepo",
   "private": true,
   "scripts": {
     "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
     "start": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "build": "npm --prefix frontend install && npm --prefix frontend run build",
+    "build:frontend": "npm run build --prefix frontend",
     "dev:backend": "npm run dev --prefix backend",
     "dev:frontend": "npm run dev --prefix frontend",
     "seed": "npm run seed --prefix backend",
