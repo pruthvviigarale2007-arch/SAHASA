@@ -1,0 +1,22 @@
+import mongoose from 'mongoose';
+
+const newsletterSchema = new mongoose.Schema(
+  {
+    email: {
+      type: String,
+      required: [true, 'Email address is required'],
+      unique: true,
+      lowercase: true,
+      trim: true,
+    },
+    subscribed: {
+      type: Boolean,
+      default: true,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+export default mongoose.model('Newsletter', newsletterSchema);
